@@ -1,3 +1,4 @@
+
 def cargar_matriz_notas(n : int, m : int) -> list: #n = cantidad alumnos m = notas
     """
     Que hace?\n
@@ -21,7 +22,7 @@ def cargar_matriz_notas(n : int, m : int) -> list: #n = cantidad alumnos m = not
                     if 1 <= nota_entera <= 10:
                         fila.append(nota_entera)
                         break
-                print("Error: la nota debe ser un numero entero entre 1 y 10.")
+                print("Error: la nota debe ser un numero entero entre 1 y 10")
             j += 1
         matriz.append(fila)
         i += 1
@@ -47,11 +48,12 @@ def porcentaje_aprobados(matriz : list):
         j = 0
         while j < len(alumno):
             nota = alumno[j]
-            total_examenes += 1
+            total_examenes += 1 # Acumulador cantidad examenes
             if nota >= 6:
-                cantidad_examenes_aprobados += 1
+                cantidad_examenes_aprobados += 1 # Acumulador cantidad aprobados
             j += 1
 
+        # Calculos porcentaje de examenes aprobados
         porcentaje = (cantidad_examenes_aprobados * 100) / total_examenes
         print(f"El alumno {i+1} tiene {cantidad_examenes_aprobados} examen/es aprobado/s de {total_examenes} examenes con un porcentaje de {porcentaje:.2f}%")
         i += 1
