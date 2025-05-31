@@ -98,3 +98,19 @@ def mejor_promedio(matriz : list):
         i += 1
 
     return indice_mejor_prom, mejor_prom
+
+def buscar_nota(matriz, nota_buscada):
+    """
+    Que hace?\n
+    Busca una nota.\n
+    Que recibe?\n
+    Una matriz con las notas de los alumnos y la nota a buscar\n
+    Que retorna?\n
+    Una lista con las posiciones en las que se encuentran las notas buscadas
+    """
+    posiciones = []
+    for i in range(len(matriz)):
+        for j in range(len(matriz[0])):
+            if matriz[i][j] == nota_buscada:
+                posiciones.append((i, j))
+    return posiciones
