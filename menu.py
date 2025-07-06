@@ -36,13 +36,16 @@ while True:
 
         case "2":
             if cargada:
-                porcentaje_aprobados(matriz)
+                resultados = porcentaje_aprobados(matriz)
+                for alumno, aprobados, total, porcentaje in resultados:
+                    print(f"El alumno {alumno + 1} tiene {aprobados} examenes aprobados de {total} con un porcentaje de {porcentaje:.2f}%")
             else:
                 print("Debe cargar primero la matriz.")
 
         case "3":
             if cargada:
-                mejor_promedio(matriz)
+                indice, promedio = mejor_promedio(matriz)
+                print(f"El alumno {indice + 1} tiene el mejor promedio con {promedio:.2f}")
             else:
                 print("Debe cargar primero la matriz.")
 

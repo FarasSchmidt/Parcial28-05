@@ -1,4 +1,4 @@
-
+# 1
 def cargar_matriz_notas(n : int, m : int) -> list: #n = cantidad alumnos m = notas
     """
     Que hace?\n
@@ -28,9 +28,9 @@ def cargar_matriz_notas(n : int, m : int) -> list: #n = cantidad alumnos m = not
         i += 1
     return matriz
 
-matriz = cargar_matriz_notas(3, 2)
-print(matriz)
-
+#matriz = cargar_matriz_notas(3, 2)
+#print(matriz)
+# 2
 def porcentaje_aprobados(matriz : list):
     """
     Que hace?\n
@@ -40,6 +40,7 @@ def porcentaje_aprobados(matriz : list):
     Que retorna?\n
     Hace un print con el alumno, cantidad de aprobados sobre el total y el porcentaje
     """
+    resultados = []
     i = 0
     while i < len(matriz):
         alumno = matriz[i]
@@ -55,17 +56,19 @@ def porcentaje_aprobados(matriz : list):
 
         # Calculos porcentaje de examenes aprobados
         porcentaje = (cantidad_examenes_aprobados * 100) / total_examenes
-        indice_alumno =i+1 
+        indice_alumno = i
         #print(f"El alumno {i+1} tiene {cantidad_examenes_aprobados} examen/es aprobado/s de {total_examenes} examenes con un porcentaje de {porcentaje:.2f}%")
+        resultados.append((indice_alumno, cantidad_examenes_aprobados, total_examenes, porcentaje))
         i += 1
-        return indice_alumno, cantidad_examenes_aprobados, total_examenes, porcentaje
 
-porcentaje_aprobados(matriz)
+    return resultados
+
+#porcentaje_aprobados(matriz)
 
 # 3. Acumulador de notas dividido en cantidad de notas, sacar mejor nota
 # 4. Buscar nota especifica, guardo posiciones donde se encuentran en otra lista y la imprimo
 # Completar el menu. Entrega el viernes
-
+# 3
 def mejor_promedio(matriz : list):
     """
     Que hace?\n
@@ -98,7 +101,7 @@ def mejor_promedio(matriz : list):
         i += 1
 
     return indice_mejor_prom, mejor_prom
-
+# 4
 def buscar_nota(matriz, nota_buscada):
     """
     Que hace?\n
